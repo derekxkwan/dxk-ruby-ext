@@ -20,15 +20,13 @@ class Array
     return self.map{|i| cur_sum += i}.normalize(scale)
   end
 
-  def wsample(weight_arr, n = 1)
+  def wsample(weights, n = 1)
     cur_len = self.length
-    w_len = weight_arr.length
+    w_len = weights.length
     ret = []
     n = (n > cur_len ? cur_len : (n < 1 ? 1 : n)).to_i
-
-    weight_arr = weight_arr + [0] * (cur_len - w_len) if w_len < cur_len
-    
-    normalized = weight_arr[0..cur_len].cdf
+    weights = weights + [0] * (cur_len - w_len) if w_len < cur_len
+    normalized = weights[0..cur_len].cdf
     n.times do
       idx = n -1
       cur_rand = rand()
