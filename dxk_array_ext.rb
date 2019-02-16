@@ -4,6 +4,11 @@ class Array
     return self.map{|i| i.to_f/cur_max}
   end
 
+  def pdf
+    cur_sum = self.inject(0, :+)
+    return self.map{|i| i.to_f/cur_sum}
+  end
+  
   def cdf
     cur_sum = 0
     return self.map{|i| cur_sum += i}.normalize
@@ -37,3 +42,4 @@ class Array
     end
   end
 end
+ 

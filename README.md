@@ -5,6 +5,7 @@ class extensions for ruby
 
 
 - **dxk_array_ext**: extensions for Array
-  - .normalize - normalization
   - .cdf - cumulative distribution function (cumulative sum + normalization)
+  - .normalize - normalization
+  - .pdf - probability density function (divide each by sum of array)
   - .wsample - weighted sample (args: weights, number to sample)
