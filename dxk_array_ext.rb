@@ -1,17 +1,17 @@
 class Array
-  def normalize
+  def normalize(scale = 1)
     cur_max = self.max
-    return self.map{|i| i.to_f/cur_max}
+    return self.map{|i| (i.to_f * scale)/cur_max}
   end
 
-  def pdf
+  def pdf(scale = 1)
     cur_sum = self.inject(0, :+)
-    return self.map{|i| i.to_f/cur_sum}
+    return self.map{|i| (i.to_f * scale)/cur_sum}
   end
   
-  def cdf
+  def cdf(scale = 1)
     cur_sum = 0
-    return self.map{|i| cur_sum += i}.normalize
+    return self.map{|i| cur_sum += i}.normalize(scale)
   end
 
   def wsample(weight_arr, num = 1)
