@@ -1,12 +1,18 @@
 class Array
   def normalize(scale = 1)
     cur_max = self.max
-    return self.map{|i| (i.to_f * scale)/cur_max}
+    if scale != 1
+      return self.map{|i| (i.to_f * scale)/cur_max}
+    else
+      return self.map{|i| i.to_f/cur_max}
   end
 
   def pdf(scale = 1)
     cur_sum = self.inject(0, :+)
-    return self.map{|i| (i.to_f * scale)/cur_sum}
+    if scale != 1
+      return self.map{|i| (i.to_f * scale)/cur_sum}
+    else
+      return self.map{|i| i.to_f/cur_sum}
   end
   
   def cdf(scale = 1)
