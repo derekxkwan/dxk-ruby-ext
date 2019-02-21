@@ -26,7 +26,7 @@ class Array
     ret = []
     n = (n > cur_len ? cur_len : (n < 1 ? 1 : n)).to_i
     weights = weights + [0] * (cur_len - w_len) if w_len < cur_len
-    normalized = weights[0..cur_len].cdf
+    normalized = weights[0...cur_len].cdf
     n.times do
       idx = n -1
       cur_rand = rand()
