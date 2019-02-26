@@ -4,7 +4,7 @@ class extensions for ruby
 
 
 
-- **dxk_array_ext**: extensions for Array
+- **dxk-array_ext**: extensions for Array
   - .cdf - cumulative distribution function (cumulative sum + normalization)
 	- args : optional scaler
   - .normalize - normalization
