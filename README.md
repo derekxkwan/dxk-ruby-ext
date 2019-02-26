@@ -1,4 +1,4 @@
-# dxk_ruby_ext
+# dxk-ruby-ext
 class extensions for ruby
 
 
