@@ -5,6 +5,7 @@ class Array
       return self.map{|i| (i.to_f * scale)/cur_max}
     else
       return self.map{|i| i.to_f/cur_max}
+    end
   end
 
   def pdf(scale = 1)
@@ -13,6 +14,7 @@ class Array
       return self.map{|i| (i.to_f * scale)/cur_sum}
     else
       return self.map{|i| i.to_f/cur_sum}
+    end
   end
   
   def cdf(scale = 1)
